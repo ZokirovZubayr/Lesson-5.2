@@ -1,10 +1,14 @@
-let a = prompt("Ismingizni kiriting...");
-let b = prompt("Space idingizni kiriting...");
-let d = prompt("Space passwordingizni kiriting...");
-const name1 = {
-    name: "Zubayr",
-    id: "622949",
-    password: "68927",
-}
+var slideIndex = 0;
+showSlides();
 
-console.log(name1);
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
